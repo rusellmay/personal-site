@@ -1,0 +1,472 @@
+---
+// Portfolio landing page - Rusell May, full-stack developer (Merida, Yucatan).
+// Converted from the single-file export; content, styles and scripts kept identical.
+// Markup defaults are English; the i18n script below applies Spanish on load
+// (Spanish is the default language) and swaps languages on toggle.
+import '../styles/global.css';
+---
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<meta name="description" content="Portfolio of Rusell May — full-stack developer in Mérida, Yucatán. HTML, CSS, JavaScript, Vue, Bootstrap, Node.js, Ruby, C++, PostgreSQL, MySQL, Linux, AWS, Docker, CI/CD pipelines, crontab, Git, Slack, Jira, Postman, VS Code, Cursor and AI (Copilot, ChatGPT). Available for employment, freelance and commissioned projects." />
+<link rel="icon" href="data:," />
+<title>Rusell — Full-Stack Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+
+</head>
+<body>
+<div id="progress" aria-hidden="true"></div>
+<div id="cursor" aria-hidden="true"></div>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top" data-i18n-aria="brand-aria" aria-label="Rusell — home">
+      <span class="brand-mark">R</span>
+      <span>Rusell<small data-i18n="brand-role">Full-Stack Developer</small></span>
+    </a>
+    <nav class="links" data-i18n-aria="nav-aria" aria-label="Sections">
+      <a class="nav-link" href="#stack">Stack</a>
+      <a class="nav-link" href="#availability" data-i18n="nav-avail">Availability</a>
+      <a class="nav-link" href="#process" data-i18n="nav-process">Process</a>
+      <a class="nav-link" href="#principles" data-i18n="nav-principles">Principles</a>
+      <a class="nav-link" href="#contact" data-i18n="nav-contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button type="button" id="langEs" class="active" aria-pressed="true">ES</button>
+        <button type="button" id="langEn" aria-pressed="false">EN</button>
+      </div>
+      <a class="btn btn-accent magnetic" href="https://www.linkedin.com/in/rusell-may" target="_blank" rel="noopener">LinkedIn <span class="arr">↗</span></a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="hero-grid-bg" aria-hidden="true"></div>
+    <div class="hero-orb orb-1" aria-hidden="true"></div>
+    <div class="hero-orb orb-2" aria-hidden="true"></div>
+    <div class="wrap hero-in">
+      <div>
+        <span class="status-pill hero-fade"><span class="status-dot"></span><span data-i18n="status">Available · Employment, freelance & commissioned projects</span></span>
+        <h1 class="display" data-i18n-aria="h1-aria" aria-label="Full-stack developer, from the interface to the server">
+          <span class="line"><span data-i18n="h1-l1">Full-stack</span></span>
+          <span class="line"><span class="hl" data-i18n="h1-l2">developer,</span></span>
+          <span class="line"><span data-i18n="h1-l3">from the interface</span></span>
+          <span class="line"><span class="outline" data-i18n="h1-l4">to the server.</span></span>
+        </h1>
+        <p class="hero-sub hero-fade" data-i18n="hero-sub">I'm <strong>Rusell May</strong>, a <strong>full-stack</strong> developer based in <strong>Mérida, Yucatán</strong>. I work the full cycle: the interface with <strong>HTML, CSS, JavaScript, Vue and Bootstrap</strong>, the logic with <strong>Node.js and Ruby</strong>, the data in <strong>PostgreSQL and MySQL</strong>, and the environment where it all runs — <strong>Linux, AWS, Docker, CI/CD pipelines, crontab and Git</strong>. In a team I coordinate with <strong>Slack and Jira</strong>.</p>
+        <div class="hero-ctas hero-fade">
+          <a class="btn btn-accent magnetic" href="#contact"><span data-i18n="cta-contact">Get in touch</span> <span class="arr">↓</span></a>
+          <a class="btn btn-ghost magnetic" href="https://www.linkedin.com/in/rusell-may" target="_blank" rel="noopener">LinkedIn <span class="arr">↗</span></a>
+          <a class="btn btn-ghost magnetic" href="https://github.com/rusellmay" target="_blank" rel="noopener">GitHub · rusellmay <span class="arr">↗</span></a>
+          <a class="btn btn-ghost magnetic" href="mailto:rusell_may@outlook.com"><span data-i18n="cta-email">Email</span> <span class="arr">↗</span></a>
+        </div>
+        <div class="hero-meta hero-fade">
+          <span><span data-i18n="meta-loc-label">Location</span> · <b>Mérida, Yucatán</b></span>
+          <span><span data-i18n="meta-profile-label">Profile</span> · <b>Full-Stack</b></span>
+          <span>GitHub · <a href="https://github.com/rusellmay" target="_blank" rel="noopener">@rusellmay</a></span>
+          <span><span data-i18n="meta-mail-label">Email</span> · <a href="mailto:rusell_may@outlook.com">rusell_may@outlook.com</a></span>
+        </div>
+      </div>
+
+      <div class="stage" data-i18n-aria="stage-aria" aria-label="Profile card: Rusell's stack in a terminal">
+        <div class="devcard" id="devcard">
+          <div class="devcard-top">
+            <div class="t">rusell@linux<small data-i18n="code-path">~/profile — Mérida, Yucatán — zsh</small></div>
+            <span class="term-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          </div>
+          <div class="code" aria-hidden="true" data-i18n="code-block"><span class="c"># who I am</span>
+<span class="k">const</span> <span class="fn">rusell</span> = {'{'}
+  role: <span class="s">"full-stack developer"</span>,
+  frontend: [<span class="s">"HTML"</span>, <span class="s">"CSS"</span>, <span class="s">"JavaScript"</span>, <span class="s">"Vue"</span>, <span class="s">"Bootstrap"</span>],
+  backend: [<span class="s">"Node.js"</span>, <span class="s">"Ruby"</span>],
+  data: [<span class="s">"PostgreSQL"</span>, <span class="s">"MySQL"</span>],
+  infra: [<span class="s">"Linux"</span>, <span class="s">"AWS"</span>, <span class="s">"CI/CD"</span>, <span class="s">"Docker"</span>],
+  automates: <span class="s">"crontab"</span>,
+  versioning: <span class="s">"Git"</span>,
+  team: [<span class="s">"Slack"</span>, <span class="s">"Jira"</span>],
+  extra_language: <span class="s">"C++"</span>,
+  tools: [<span class="s">"Postman"</span>, <span class="s">"VS Code"</span>, <span class="s">"Cursor"</span>],
+  ai: [<span class="s">"Copilot"</span>, <span class="s">"ChatGPT"</span>],
+  github: <span class="s">"rusellmay"</span>,
+  base: <span class="s">"Mérida, Yucatán"</span>
+{'}'};</div>
+          <div class="stack-chips" aria-hidden="true">
+            <span class="stack-chip on">HTML</span><span class="stack-chip on">CSS</span><span class="stack-chip on">JavaScript</span><span class="stack-chip on">Vue</span><span class="stack-chip on">Bootstrap</span><span class="stack-chip">Node.js</span><span class="stack-chip">C++</span><span class="stack-chip">Ruby</span><span class="stack-chip">PostgreSQL</span><span class="stack-chip">MySQL</span><span class="stack-chip">Linux</span><span class="stack-chip">AWS</span><span class="stack-chip">CI/CD</span><span class="stack-chip">Docker</span><span class="stack-chip">crontab</span><span class="stack-chip">Git</span><span class="stack-chip">Slack</span><span class="stack-chip">Jira</span><span class="stack-chip">Postman</span><span class="stack-chip">VS Code</span><span class="stack-chip">Cursor</span><span class="stack-chip">Copilot</span><span class="stack-chip">ChatGPT</span>
+          </div>
+        </div>
+        <div class="float-row">
+          <div class="float-card fc-1" data-float><span class="check-ico">✓</span><span><span class="mono" data-i18n="float-flow">FULL FLOW</span><b>Frontend → Backend → Deploy</b></span></div>
+          <div class="float-card fc-2" data-float><span class="check-ico">✓</span><span><span class="mono" data-i18n="float-deploy">DEPLOYMENT</span><b>CI/CD + AWS</b></span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track" id="marqueeTrack">
+        <span>HTML <i>✦</i> CSS <i>✦</i> JavaScript <i>✦</i> Vue <i>✦</i> Bootstrap <i>✦</i> Node.js <i>✦</i> C++ <i>✦</i> Ruby <i>✦</i> PostgreSQL <i>✦</i> MySQL <i>✦</i> Linux <i>✦</i> AWS <i>✦</i> Pipelines CI/CD <i>✦</i> Docker <i>✦</i> Crontab <i>✦</i> Git <i>✦</i> Slack <i>✦</i> Jira <i>✦</i> Postman <i>✦</i> VS Code <i>✦</i> Cursor <i>✦</i> Copilot <i>✦</i> ChatGPT <i>✦</i> Full-Stack <i>✦</i></span>
+        <span>HTML <i>✦</i> CSS <i>✦</i> JavaScript <i>✦</i> Vue <i>✦</i> Bootstrap <i>✦</i> Node.js <i>✦</i> C++ <i>✦</i> Ruby <i>✦</i> PostgreSQL <i>✦</i> MySQL <i>✦</i> Linux <i>✦</i> AWS <i>✦</i> Pipelines CI/CD <i>✦</i> Docker <i>✦</i> Crontab <i>✦</i> Git <i>✦</i> Slack <i>✦</i> Jira <i>✦</i> Postman <i>✦</i> VS Code <i>✦</i> Cursor <i>✦</i> Copilot <i>✦</i> ChatGPT <i>✦</i> Full-Stack <i>✦</i></span>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <div class="stats reveal">
+        <div class="stat"><div class="num"><span data-count="23">0</span></div><p data-i18n="stat1">Technologies and tools in my stack, from HTML to AWS</p></div>
+        <div class="stat"><div class="num"><span data-count="9">0</span></div><p data-i18n="stat2">Development and data: HTML, CSS, JavaScript, Vue, Bootstrap, Node.js, Ruby, PostgreSQL and MySQL</p></div>
+        <div class="stat"><div class="num"><span data-count="6">0</span></div><p data-i18n="stat3">Infrastructure tools: Linux, AWS, CI/CD, Docker, crontab and Git</p></div>
+        <div class="stat"><div class="num"><span data-count="3">0</span></div><p data-i18n="stat4">Ways to work with me: employment, freelance and commissioned projects</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= STACK ================= -->
+  <section class="block" id="stack">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div>
+          <span class="sec-tag">01 — Stack</span>
+          <h2 class="sec-title" data-i18n="stack-title">What I build with</h2>
+        </div>
+        <p class="sec-note" data-i18n="stack-note">This is my usual stack, grouped by the part of the system where it works — not a limit. If a project calls for a different stack or a new tool, I can do it: I adapt, learn whatever is needed, and always work following good practices.</p>
+      </div>
+      <div class="skills">
+        <div class="skill-card reveal">
+          <span class="card-tag">Frontend</span>
+          <h3 data-i18n="sk1-title">The interface</h3>
+          <p data-i18n="sk1-desc">What the user sees and touches: structure, behaviour and interactive web applications.</p>
+          <ul class="tech-list">
+            <li>HTML <span data-i18n="t-html">structure and semantics</span></li>
+            <li>CSS <span data-i18n="t-css">styling and visual design</span></li>
+            <li>JavaScript <span data-i18n="t-js">logic in the browser</span></li>
+            <li>Vue <span data-i18n="t-vue">components and reactivity</span></li>
+            <li>Bootstrap <span data-i18n="t-bootstrap">components and responsive grid</span></li>
+          </ul>
+        </div>
+        <div class="skill-card reveal">
+          <span class="card-tag" data-i18n="sk2-tag">Backend · Languages</span>
+          <h3 data-i18n="sk2-title">The logic</h3>
+          <p data-i18n="sk2-desc">The code that processes, calculates and responds behind the interface, and the databases where the information is stored.</p>
+          <ul class="tech-list">
+            <li>Node.js <span data-i18n="t-node">JavaScript on the server</span></li>
+            <li>Ruby <span data-i18n="t-ruby">scripts and applications</span></li>
+            <li>JavaScript <span data-i18n="t-js2">full-stack, also outside the browser</span></li>
+            <li>PostgreSQL <span data-i18n="t-pg">relational database</span></li>
+            <li>MySQL <span data-i18n="t-mysql">relational database</span></li>
+          </ul>
+        </div>
+        <div class="skill-card reveal">
+          <span class="card-tag" data-i18n="sk3-tag">Infrastructure · DevOps</span>
+          <h3 data-i18n="sk3-title">The environment</h3>
+          <p data-i18n="sk3-desc">Where the code lives: servers, automated deployments and scheduled tasks.</p>
+          <ul class="tech-list">
+            <li>Linux <span data-i18n="t-linux">my working system</span></li>
+            <li>AWS <span data-i18n="t-aws">cloud and deployment</span></li>
+            <li>Docker <span data-i18n="t-docker">containers for development & deployment</span></li>
+            <li>Pipelines CI/CD <span data-i18n="t-cicd">continuous integration & delivery</span></li>
+            <li>Crontab <span data-i18n="t-cron">automated tasks</span></li>
+            <li>Git <span data-i18n="t-git">version control</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="skill-card skills-extra reveal">
+        <span class="card-tag" data-i18n="ex-tag">Collaboration · Tools · Extras</span>
+        <h3 data-i18n="ex-title">The rest of my toolbox</h3>
+        <div class="extra-grid">
+          <div class="extra-item"><b>Slack</b><span data-i18n="t-slack">day-to-day team communication</span></div>
+          <div class="extra-item"><b>Jira</b><span data-i18n="t-jira">task and project management</span></div>
+          <div class="extra-item"><b>Postman</b><span data-i18n="t-postman">testing APIs and endpoints</span></div>
+          <div class="extra-item"><b>VS Code</b><span data-i18n="t-vscode">my code editor</span></div>
+          <div class="extra-item"><b>Cursor</b><span data-i18n="t-cursor">AI-powered code editor</span></div>
+          <div class="extra-item"><b>Copilot · ChatGPT</b><span data-i18n="t-ia">AI assistants I use while coding</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= AVAILABILITY ================= -->
+  <section class="block" id="availability">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div>
+          <span class="sec-tag" data-i18n="avail-tag">02 — Availability</span>
+          <h2 class="sec-title" data-i18n="avail-title">Open to any format</h2>
+        </div>
+        <p class="sec-note" data-i18n="avail-note">I'm based in Mérida, Yucatán and I'm open to all three ways of working. Pick the one that fits what you need.</p>
+      </div>
+      <div class="avail-grid">
+        <div class="avail-card reveal">
+          <div class="avail-num">01</div>
+          <span class="card-tag" data-i18n="av1-tag">Employment</span>
+          <h3 data-i18n="av1-title">A role on your team</h3>
+          <p data-i18n="av1-desc">Join a team as a full-stack developer, covering interface, logic, server and deployment day to day.</p>
+        </div>
+        <div class="avail-card reveal">
+          <div class="avail-num">02</div>
+          <span class="card-tag">Freelance</span>
+          <h3 data-i18n="av2-title">Work by project</h3>
+          <p data-i18n="av2-desc">Collaborate as a freelancer on a specific application or system, end to end or on the part you're missing.</p>
+        </div>
+        <div class="avail-card reveal">
+          <div class="avail-num">03</div>
+          <span class="card-tag" data-i18n="av3-tag">Commissioned</span>
+          <h3 data-i18n="av3-title">Commissioned projects</h3>
+          <p data-i18n="av3-desc">Build something custom to order: you define it, I build it and leave it running, versioned and deployed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PROCESS ================= -->
+  <section class="block" id="process">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div>
+          <span class="sec-tag" data-i18n="proc-tag">03 — Process</span>
+          <h2 class="sec-title" data-i18n="proc-title">How I work</h2>
+        </div>
+        <p class="sec-note" data-i18n="proc-note">Being full-stack means not dropping the problem halfway: I cover every phase with the tools in my stack.</p>
+      </div>
+      <div class="process">
+        <div class="step reveal"><span class="n">01</span><h3 data-i18n="p1-title">Understand the problem</h3><p data-i18n="p1-desc">Before writing code: what's needed, who will use it, and which part is interface, which part is logic and which part is server.</p></div>
+        <div class="step reveal"><span class="n">02</span><h3 data-i18n="p2-title">Build the interface</h3><p data-i18n="p2-desc">Semantic HTML, CSS and clear JavaScript, with Bootstrap for components and Vue when the application calls for reactive state.</p></div>
+        <div class="step reveal"><span class="n">03</span><h3 data-i18n="p3-title">Program the logic</h3><p data-i18n="p3-desc">The backend in Node.js or Ruby depending on the case, with the data in PostgreSQL or MySQL, written so the code stays readable and maintainable later.</p></div>
+        <div class="step reveal"><span class="n">04</span><h3 data-i18n="p4-title">Deploy and automate</h3><p data-i18n="p4-desc">Everything versioned with Git, running on Linux and AWS, with Docker, CI/CD pipelines and crontab for anything that repeats on its own.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PRINCIPLES + CTA ================= -->
+  <section class="block" id="principles">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div>
+          <span class="sec-tag" data-i18n="prin-tag">04 — Principles</span>
+          <h2 class="sec-title" data-i18n="prin-title">Three rules I don't negotiate</h2>
+        </div>
+      </div>
+      <div class="principles">
+        <div class="principle reveal"><div class="big" data-i18n="pr1-big">If you can't read it,<br />it doesn't work.</div><p data-i18n="pr1-p">Neither the interface nor the code: legible text on screen and code another developer — or me in six months — can understand without a fight.</p></div>
+        <div class="principle reveal"><div class="big" data-i18n="pr2-big">Everything versioned,<br />everything in Git.</div><p data-i18n="pr2-p">Every change is recorded. If something breaks, you know what changed, when and why, and you can roll it back.</p></div>
+        <div class="principle reveal"><div class="big" data-i18n="pr3-big">Anything repetitive<br />gets automated.</div><p data-i18n="pr3-p">That's what CI/CD pipelines and crontab are for: what a machine can do on its own shouldn't be done by a person by hand.</p></div>
+      </div>
+
+      <div class="cta reveal" id="contact">
+        <div class="ring" aria-hidden="true"></div>
+        <span class="sec-tag" data-i18n="cta-tag">05 — Let's talk</span>
+        <h2 data-i18n="cta-title">Need a <span class="hl">full-stack</span> developer on your team?</h2>
+        <p data-i18n="cta-p">I'm open to employment, freelance work and commissioned projects where you need someone who covers the full cycle: interface, logic, server and deployment. Reach me by email or LinkedIn — I reply on either.</p>
+        <div class="contact-grid">
+          <a class="contact-item" href="mailto:rusell_may@outlook.com">
+            <small data-i18n="c-email-label">Email</small>
+            <strong>rusell_may@outlook.com</strong>
+            <span class="sub" data-i18n="c-email-sub">Write to me directly →</span>
+          </a>
+          <a class="contact-item" href="https://www.linkedin.com/in/rusell-may" target="_blank" rel="noopener">
+            <small>LinkedIn</small>
+            <strong>linkedin.com/in/rusell-may</strong>
+            <span class="sub" data-i18n="c-linkedin-sub">Connect or send me a message →</span>
+          </a>
+          <a class="contact-item" href="https://github.com/rusellmay" target="_blank" rel="noopener">
+            <small>GitHub</small>
+            <strong>github.com/rusellmay</strong>
+            <span class="sub" data-i18n="c-github-sub">My code and repositories →</span>
+          </a>
+          <div class="contact-item">
+            <small data-i18n="c-loc-label">Location</small>
+            <strong>Mérida, Yucatán</strong>
+            <span class="sub" data-i18n="c-loc-sub">Mexico · open to remote work</span>
+          </div>
+        </div>
+        <div class="hero-ctas">
+          <a class="btn btn-accent magnetic" href="https://www.linkedin.com/in/rusell-may" target="_blank" rel="noopener"><span data-i18n="cta-btn-linkedin">Go to my LinkedIn</span> <span class="arr">↗</span></a>
+          <a class="btn btn-ghost magnetic" href="mailto:rusell_may@outlook.com"><span data-i18n="cta-btn-email">Email me</span> <span class="arr">↗</span></a>
+          <a class="btn btn-ghost magnetic" href="https://github.com/rusellmay" target="_blank" rel="noopener">GitHub <span class="arr">↗</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot-in">
+    <span data-i18n="footer-copy">© 2026 Rusell May — Full-Stack Developer · Mérida, Yucatán</span>
+    <div class="foot-links">
+      <a href="#stack">Stack</a>
+      <a href="#availability" data-i18n="nav-avail">Availability</a>
+      <a href="#process" data-i18n="nav-process">Process</a>
+      <a href="https://www.linkedin.com/in/rusell-may" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a href="https://github.com/rusellmay" target="_blank" rel="noopener">GitHub ↗</a>
+      <a href="mailto:rusell_may@outlook.com" data-i18n="footer-mail">Email ↗</a>
+    </div>
+    <span class="mono">HTML · CSS · JS · VUE · BOOTSTRAP · NODE.JS · RUBY · POSTGRESQL · MYSQL · LINUX · AWS · DOCKER · GIT · SLACK · JIRA · POSTMAN · VS CODE · CURSOR · COPILOT · CHATGPT · C++</span>
+  </div>
+</footer>
+
+<script is:inline>
+(function(){
+  var I18N = {
+    es: {
+      "doc-title":"Rusell — Desarrollador Full-Stack",
+      "doc-desc":"Portafolio de Rusell May — desarrollador full-stack en Mérida, Yucatán. HTML, CSS, JavaScript, Vue, Bootstrap, Node.js, Ruby, C++, PostgreSQL, MySQL, Linux, AWS, Docker, pipelines CI/CD, crontab, Git, Slack, Jira, Postman, VS Code, Cursor e IA (Copilot, ChatGPT). Disponible para empleo, freelance y proyectos por encargo.",
+      "brand-role":"Desarrollador Full-Stack","brand-aria":"Rusell — inicio","nav-aria":"Secciones",
+      "nav-avail":"Disponibilidad","nav-process":"Proceso","nav-principles":"Principios","nav-contact":"Contacto",
+      "status":"Disponible · Empleo, freelance y proyectos por encargo",
+      "h1-aria":"Desarrollador full-stack, de la interfaz al servidor",
+      "h1-l1":"Desarrollador","h1-l2":"full-stack,","h1-l3":"de la interfaz","h1-l4":"al servidor.",
+      "hero-sub":"Soy <strong>Rusell May</strong>, desarrollador <strong>full-stack</strong> en <strong>Mérida, Yucatán</strong>. Trabajo el ciclo completo: la interfaz con <strong>HTML, CSS, JavaScript, Vue y Bootstrap</strong>, la lógica con <strong>Node.js y Ruby</strong>, los datos en <strong>PostgreSQL y MySQL</strong>, y el entorno donde todo corre — <strong>Linux, AWS, Docker, pipelines CI/CD, crontab y Git</strong>. En equipo me coordino con <strong>Slack y Jira</strong>.",
+      "cta-contact":"Contactarme","cta-email":"Correo",
+      "meta-loc-label":"Ubicación","meta-profile-label":"Perfil","meta-mail-label":"Correo",
+      "float-deploy":"DESPLIEGUE","float-flow":"FLUJO COMPLETO","code-path":"~/perfil — Mérida, Yucatán — zsh","code-block":"<span class=\"c\"># quién soy</span>\n<span class=\"k\">const</span> <span class=\"fn\">rusell</span> = {\n  rol: <span class=\"s\">\"full-stack developer\"</span>,\n  frontend: [<span class=\"s\">\"HTML\"</span>, <span class=\"s\">\"CSS\"</span>, <span class=\"s\">\"JavaScript\"</span>, <span class=\"s\">\"Vue\"</span>, <span class=\"s\">\"Bootstrap\"</span>],\n  backend: [<span class=\"s\">\"Node.js\"</span>, <span class=\"s\">\"Ruby\"</span>],\n  datos: [<span class=\"s\">\"PostgreSQL\"</span>, <span class=\"s\">\"MySQL\"</span>],\n  infra: [<span class=\"s\">\"Linux\"</span>, <span class=\"s\">\"AWS\"</span>, <span class=\"s\">\"CI/CD\"</span>, <span class=\"s\">\"Docker\"</span>],\n  automatiza: <span class=\"s\">\"crontab\"</span>,\n  versiona: <span class=\"s\">\"Git\"</span>,\n  equipo: [<span class=\"s\">\"Slack\"</span>, <span class=\"s\">\"Jira\"</span>],\n  lenguaje_extra: <span class=\"s\">\"C++\"</span>,\n  herramientas: [<span class=\"s\">\"Postman\"</span>, <span class=\"s\">\"VS Code\"</span>, <span class=\"s\">\"Cursor\"</span>],\n  ia: [<span class=\"s\">\"Copilot\"</span>, <span class=\"s\">\"ChatGPT\"</span>],\n  github: <span class=\"s\">\"rusellmay\"</span>,\n  base: <span class=\"s\">\"Mérida, Yucatán\"</span>\n};",
+      "stage-aria":"Tarjeta de perfil: stack de Rusell en una terminal",
+      "stat1":"Tecnologías y herramientas en mi stack, de HTML a AWS","stat2":"Desarrollo y datos: HTML, CSS, JavaScript, Vue, Bootstrap, Node.js, Ruby, PostgreSQL y MySQL","stat3":"Herramientas de infraestructura: Linux, AWS, CI/CD, Docker, crontab y Git","stat4":"Formas de trabajar conmigo: empleo, freelance y proyectos por encargo",
+      "stack-title":"Con qué construyo","stack-note":"Este es mi stack habitual, agrupado por la parte del sistema donde trabaja — no un límite. Si un proyecto pide otro stack o una herramienta nueva, puedo hacerlo: me adapto, aprendo lo que haga falta y trabajo siempre siguiendo buenas prácticas.",
+      "sk1-title":"La interfaz","sk1-desc":"Lo que el usuario ve y toca: estructura, comportamiento y aplicaciones web interactivas.",
+      "t-html":"estructura y semántica","t-css":"estilos y diseño visual","t-js":"lógica en el navegador","t-vue":"componentes y reactividad","t-bootstrap":"componentes y rejilla responsive",
+      "sk2-tag":"Backend · Lenguajes","sk2-title":"La lógica","sk2-desc":"El código que procesa, calcula y responde detrás de la interfaz, y las bases de datos donde se guarda la información.",
+      "t-node":"JavaScript en el servidor","t-cpp":"rendimiento y sistemas","t-ruby":"scripts y aplicaciones","t-js2":"full-stack, también fuera del navegador","t-pg":"base de datos relacional","t-mysql":"base de datos relacional",
+      "sk3-tag":"Infraestructura · DevOps","sk3-title":"El entorno","sk3-desc":"Donde el código vive: servidores, despliegues automáticos y tareas programadas.",
+      "t-linux":"mi sistema de trabajo","t-aws":"nube y despliegue","t-docker":"contenedores para desarrollo y despliegue","t-cicd":"integración y entrega continua","t-cron":"tareas automatizadas","t-git":"control de versiones","ex-tag":"Colaboración · Herramientas · Extra","ex-title":"El resto de mi caja de herramientas","t-slack":"comunicación diaria con el equipo","t-jira":"gestión de tareas y proyectos","t-postman":"probar APIs y endpoints","t-vscode":"mi editor de código","t-cursor":"editor con IA integrada","t-ia":"asistentes de IA que uso al programar",
+      "avail-tag":"02 — Disponibilidad","avail-title":"Abierto a cualquier formato","avail-note":"Estoy en Mérida, Yucatán y estoy abierto a las tres formas de trabajo. Elige la que encaje con lo que necesitas.",
+      "av1-tag":"Empleo","av1-title":"Un puesto en tu equipo","av1-desc":"Sumarme a un equipo como desarrollador full-stack, cubriendo interfaz, lógica, servidor y despliegue en el día a día.",
+      "av2-title":"Trabajo por proyecto","av2-desc":"Colaborar como freelance en una aplicación o sistema concreto, de principio a fin o en la parte que te falte.",
+      "av3-tag":"Por encargo","av3-title":"Proyectos por encargo","av3-desc":"Construir algo a medida por encargo: lo defines, lo programo y te lo dejo corriendo, versionado y desplegado.",
+      "proc-tag":"03 — Proceso","proc-title":"Así trabajo","proc-note":"Ser full-stack significa no soltar el problema a mitad de camino: cada fase la cubro con las herramientas de mi stack.",
+      "p1-title":"Entender el problema","p1-desc":"Antes de escribir código: qué se necesita, quién lo va a usar y qué parte es interfaz, qué parte es lógica y qué parte es servidor.",
+      "p2-title":"Construir la interfaz","p2-desc":"HTML semántico, CSS y JavaScript claro, con Bootstrap para componentes y Vue cuando la aplicación pide estado reactivo.",
+      "p3-title":"Programar la lógica","p3-desc":"El backend con Node.js o Ruby según el caso, con los datos en PostgreSQL o MySQL, pensando en que el código se lea y se pueda mantener después.",
+      "p4-title":"Desplegar y automatizar","p4-desc":"Todo versionado con Git, corriendo en Linux y AWS, con Docker, pipelines CI/CD y crontab para lo que se repite solo.",
+      "prin-tag":"04 — Principios","prin-title":"Tres reglas que no negocio",
+      "pr1-big":"Si no se lee,<br />no sirve.","pr1-p":"Ni la interfaz ni el código: texto legible en pantalla y código que otro desarrollador — o yo en seis meses — pueda entender sin pelear.",
+      "pr2-big":"Todo versionado,<br />todo en Git.","pr2-p":"Cada cambio queda registrado. Si algo se rompe, se sabe qué cambió, cuándo y por qué, y se puede volver atrás.",
+      "pr3-big":"Lo repetitivo<br />se automatiza.","pr3-p":"Para eso están los pipelines CI/CD y crontab: lo que la máquina puede hacer sola, no debería hacerlo una persona a mano.",
+      "cta-tag":"05 — Hablemos","cta-title":"¿Necesitas un <span class=\"hl\">full-stack</span> en tu equipo?","cta-p":"Estoy abierto a empleo, trabajo freelance y proyectos por encargo donde haga falta alguien que cubra el ciclo completo: interfaz, lógica, servidor y despliegue. Escríbeme por correo o por LinkedIn — respondo por cualquiera de los dos.",
+      "c-email-label":"Correo","c-email-sub":"Escríbeme directamente →","c-linkedin-sub":"Conecta o mándame mensaje →","c-github-sub":"Mi código y mis repositorios →","c-loc-label":"Ubicación","c-loc-sub":"México · abierto a trabajo remoto",
+      "cta-btn-linkedin":"Ir a mi LinkedIn","cta-btn-email":"Escribirme por correo",
+      "footer-copy":"© 2026 Rusell May — Desarrollador Full-Stack · Mérida, Yucatán","footer-mail":"Correo ↗"
+    },
+    en: {
+      "doc-title":"Rusell — Full-Stack Developer",
+      "doc-desc":"Portfolio of Rusell May — full-stack developer in Mérida, Yucatán. HTML, CSS, JavaScript, Vue, Bootstrap, Node.js, Ruby, C++, PostgreSQL, MySQL, Linux, AWS, Docker, CI/CD pipelines, crontab, Git, Slack, Jira, Postman, VS Code, Cursor and AI (Copilot, ChatGPT). Available for employment, freelance and commissioned projects.",
+      "brand-role":"Full-Stack Developer","brand-aria":"Rusell — home","nav-aria":"Sections",
+      "nav-avail":"Availability","nav-process":"Process","nav-principles":"Principles","nav-contact":"Contact",
+      "status":"Available · Employment, freelance & commissioned projects",
+      "h1-aria":"Full-stack developer, from the interface to the server",
+      "h1-l1":"Full-stack","h1-l2":"developer,","h1-l3":"from the interface","h1-l4":"to the server.",
+      "hero-sub":"I'm <strong>Rusell May</strong>, a <strong>full-stack</strong> developer based in <strong>Mérida, Yucatán</strong>. I work the full cycle: the interface with <strong>HTML, CSS, JavaScript, Vue and Bootstrap</strong>, the logic with <strong>Node.js and Ruby</strong>, the data in <strong>PostgreSQL and MySQL</strong>, and the environment where it all runs — <strong>Linux, AWS, Docker, CI/CD pipelines, crontab and Git</strong>. In a team I coordinate with <strong>Slack and Jira</strong>.",
+      "cta-contact":"Get in touch","cta-email":"Email",
+      "meta-loc-label":"Location","meta-profile-label":"Profile","meta-mail-label":"Email",
+      "float-deploy":"DEPLOYMENT","float-flow":"FULL FLOW","code-path":"~/profile — Mérida, Yucatán — zsh","code-block":"<span class=\"c\"># who I am</span>\n<span class=\"k\">const</span> <span class=\"fn\">rusell</span> = {\n  role: <span class=\"s\">\"full-stack developer\"</span>,\n  frontend: [<span class=\"s\">\"HTML\"</span>, <span class=\"s\">\"CSS\"</span>, <span class=\"s\">\"JavaScript\"</span>, <span class=\"s\">\"Vue\"</span>, <span class=\"s\">\"Bootstrap\"</span>],\n  backend: [<span class=\"s\">\"Node.js\"</span>, <span class=\"s\">\"Ruby\"</span>],\n  data: [<span class=\"s\">\"PostgreSQL\"</span>, <span class=\"s\">\"MySQL\"</span>],\n  infra: [<span class=\"s\">\"Linux\"</span>, <span class=\"s\">\"AWS\"</span>, <span class=\"s\">\"CI/CD\"</span>, <span class=\"s\">\"Docker\"</span>],\n  automates: <span class=\"s\">\"crontab\"</span>,\n  versioning: <span class=\"s\">\"Git\"</span>,\n  team: [<span class=\"s\">\"Slack\"</span>, <span class=\"s\">\"Jira\"</span>],\n  extra_language: <span class=\"s\">\"C++\"</span>,\n  tools: [<span class=\"s\">\"Postman\"</span>, <span class=\"s\">\"VS Code\"</span>, <span class=\"s\">\"Cursor\"</span>],\n  ai: [<span class=\"s\">\"Copilot\"</span>, <span class=\"s\">\"ChatGPT\"</span>],\n  github: <span class=\"s\">\"rusellmay\"</span>,\n  base: <span class=\"s\">\"Mérida, Yucatán\"</span>\n};",
+      "stage-aria":"Profile card: Rusell's stack in a terminal",
+      "stat1":"Technologies and tools in my stack, from HTML to AWS","stat2":"Development and data: HTML, CSS, JavaScript, Vue, Bootstrap, Node.js, Ruby, PostgreSQL and MySQL","stat3":"Infrastructure tools: Linux, AWS, CI/CD, Docker, crontab and Git","stat4":"Ways to work with me: employment, freelance and commissioned projects",
+      "stack-title":"What I build with","stack-note":"This is my usual stack, grouped by the part of the system where it works — not a limit. If a project calls for a different stack or a new tool, I can do it: I adapt, learn whatever is needed, and always work following good practices.",
+      "sk1-title":"The interface","sk1-desc":"What the user sees and touches: structure, behaviour and interactive web applications.",
+      "t-html":"structure and semantics","t-css":"styling and visual design","t-js":"logic in the browser","t-vue":"components and reactivity","t-bootstrap":"components and responsive grid",
+      "sk2-tag":"Backend · Languages","sk2-title":"The logic","sk2-desc":"The code that processes, calculates and responds behind the interface, and the databases where the information is stored.",
+      "t-node":"JavaScript on the server","t-cpp":"performance and systems","t-ruby":"scripts and applications","t-js2":"full-stack, also outside the browser","t-pg":"relational database","t-mysql":"relational database",
+      "sk3-tag":"Infrastructure · DevOps","sk3-title":"The environment","sk3-desc":"Where the code lives: servers, automated deployments and scheduled tasks.",
+      "t-linux":"my working system","t-aws":"cloud and deployment","t-docker":"containers for development & deployment","t-cicd":"continuous integration & delivery","t-cron":"automated tasks","t-git":"version control","ex-tag":"Collaboration · Tools · Extras","ex-title":"The rest of my toolbox","t-slack":"day-to-day team communication","t-jira":"task and project management","t-postman":"testing APIs and endpoints","t-vscode":"my code editor","t-cursor":"AI-powered code editor","t-ia":"AI assistants I use while coding",
+      "avail-tag":"02 — Availability","avail-title":"Open to any format","avail-note":"I'm based in Mérida, Yucatán and I'm open to all three ways of working. Pick the one that fits what you need.",
+      "av1-tag":"Employment","av1-title":"A role on your team","av1-desc":"Join a team as a full-stack developer, covering interface, logic, server and deployment day to day.",
+      "av2-title":"Work by project","av2-desc":"Collaborate as a freelancer on a specific application or system, end to end or on the part you're missing.",
+      "av3-tag":"Commissioned","av3-title":"Commissioned projects","av3-desc":"Build something custom to order: you define it, I build it and leave it running, versioned and deployed.",
+      "proc-tag":"03 — Process","proc-title":"How I work","proc-note":"Being full-stack means not dropping the problem halfway: I cover every phase with the tools in my stack.",
+      "p1-title":"Understand the problem","p1-desc":"Before writing code: what's needed, who will use it, and which part is interface, which part is logic and which part is server.",
+      "p2-title":"Build the interface","p2-desc":"Semantic HTML, CSS and clear JavaScript, with Bootstrap for components and Vue when the application calls for reactive state.",
+      "p3-title":"Program the logic","p3-desc":"The backend in Node.js or Ruby depending on the case, with the data in PostgreSQL or MySQL, written so the code stays readable and maintainable later.",
+      "p4-title":"Deploy and automate","p4-desc":"Everything versioned with Git, running on Linux and AWS, with Docker, CI/CD pipelines and crontab for anything that repeats on its own.",
+      "prin-tag":"04 — Principles","prin-title":"Three rules I don't negotiate",
+      "pr1-big":"If you can't read it,<br />it doesn't work.","pr1-p":"Neither the interface nor the code: legible text on screen and code another developer — or me in six months — can understand without a fight.",
+      "pr2-big":"Everything versioned,<br />everything in Git.","pr2-p":"Every change is recorded. If something breaks, you know what changed, when and why, and you can roll it back.",
+      "pr3-big":"Anything repetitive<br />gets automated.","pr3-p":"That's what CI/CD pipelines and crontab are for: what a machine can do on its own shouldn't be done by a person by hand.",
+      "cta-tag":"05 — Let's talk","cta-title":"Need a <span class=\"hl\">full-stack</span> developer on your team?","cta-p":"I'm open to employment, freelance work and commissioned projects where you need someone who covers the full cycle: interface, logic, server and deployment. Reach me by email or LinkedIn — I reply on either.",
+      "c-email-label":"Email","c-email-sub":"Write to me directly →","c-linkedin-sub":"Connect or send me a message →","c-github-sub":"My code and repositories →","c-loc-label":"Location","c-loc-sub":"Mexico · open to remote work",
+      "cta-btn-linkedin":"Go to my LinkedIn","cta-btn-email":"Email me",
+      "footer-copy":"© 2026 Rusell May — Full-Stack Developer · Mérida, Yucatán","footer-mail":"Email ↗"
+    }
+  };
+  function setLang(lang){
+    var dict = I18N[lang] || I18N.es;
+    document.documentElement.lang = lang;
+    document.title = dict["doc-title"];
+    var metaDesc = document.querySelector("meta[name=\"description\"]");
+    if (metaDesc && dict["doc-desc"] !== undefined) metaDesc.setAttribute("content", dict["doc-desc"]);
+    document.querySelectorAll("[data-i18n]").forEach(function(el){
+      var k = el.getAttribute("data-i18n");
+      if (dict[k] !== undefined) el.innerHTML = dict[k];
+    });
+    document.querySelectorAll("[data-i18n-aria]").forEach(function(el){
+      var k = el.getAttribute("data-i18n-aria");
+      if (dict[k] !== undefined) el.setAttribute("aria-label", dict[k]);
+    });
+    var esBtn = document.getElementById("langEs"), enBtn = document.getElementById("langEn");
+    if (esBtn && enBtn){
+      esBtn.classList.toggle("active", lang === "es"); esBtn.setAttribute("aria-pressed", lang === "es" ? "true" : "false");
+      enBtn.classList.toggle("active", lang === "en"); enBtn.setAttribute("aria-pressed", lang === "en" ? "true" : "false");
+    }
+  }
+  var esBtn = document.getElementById("langEs"), enBtn = document.getElementById("langEn");
+  if (esBtn) esBtn.addEventListener("click", function(){ setLang("es"); });
+  if (enBtn) enBtn.addEventListener("click", function(){ setLang("en"); });
+  // Default language is Spanish: apply it on load so the page opens in
+  // Spanish even though the markup defaults are English. This runs
+  // synchronously at the end of <body>, before first paint, so Spanish
+  // users do not see a flash of English.
+  setLang("es");
+  window.__setLang = setLang;
+})();
+</script>
+<script is:inline src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script is:inline src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script is:inline>
+(function(){
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var hasGsap = typeof gsap !== "undefined";
+  function showAll(){
+    document.querySelectorAll(".reveal").forEach(function(el){ el.style.opacity = 1; });
+    document.querySelectorAll("[data-count]").forEach(function(el){ el.textContent = el.getAttribute("data-count"); });
+  }
+  if (!hasGsap || reduced) { showAll(); return; }
+  gsap.registerPlugin(ScrollTrigger);
+  var cursor = document.getElementById("cursor");
+  var cx = gsap.quickTo(cursor, "x", {duration:.35, ease:"power3"});
+  var cy = gsap.quickTo(cursor, "y", {duration:.35, ease:"power3"});
+  gsap.set(cursor, {xPercent:-50, yPercent:-50, x:-100, y:-100});
+  window.addEventListener("mousemove", function(e){ cx(e.clientX); cy(e.clientY); });
+  document.querySelectorAll("a, .lang-toggle button").forEach(function(el){
+    el.addEventListener("mouseenter", function(){ cursor.classList.add("is-hover"); gsap.to(cursor, {scale:2, duration:.3}); });
+    el.addEventListener("mouseleave", function(){ cursor.classList.remove("is-hover"); gsap.to(cursor, {scale:1, duration:.3}); });
+  });
+  gsap.to("#progress", { scaleX:1, ease:"none", scrollTrigger:{ trigger:document.body, start:"top top", end:"bottom bottom", scrub:.3 } });
+  var tl = gsap.timeline({defaults:{ease:"power4.out"}});
+  tl.from("h1.display .line > span", {yPercent:115, duration:1.15, stagger:.09})
+    .from(".hero-fade", {y:26, opacity:0, duration:.9, stagger:.1}, "-=.7")
+    .from(".devcard", {y:56, opacity:0, rotate:2.5, duration:1.1, ease:"power3.out"}, "-=.8")
+    .from("[data-float]", {y:10, opacity:0, scale:.94, duration:.7, stagger:.15, ease:"back.out(2)"}, "-=.6");
+  gsap.to("[data-float]", { y:"-=5", duration:2.8, ease:"sine.inOut", yoyo:true, repeat:-1, stagger:.5 });
+  gsap.to(".orb-1", { y:90, scrollTrigger:{ trigger:".hero", start:"top top", end:"bottom top", scrub:1 } });
+  gsap.to(".orb-2", { rotate:120, scrollTrigger:{ trigger:".hero", start:"top top", end:"bottom top", scrub:1 } });
+  gsap.to("#marqueeTrack", { xPercent:-50, duration:26, ease:"none", repeat:-1 });
+  gsap.utils.toArray(".reveal").forEach(function(el){
+    gsap.fromTo(el, {y:44, opacity:0}, { y:0, opacity:1, duration:1, ease:"power3.out", scrollTrigger:{ trigger:el, start:"top 86%" } });
+  });
+  document.querySelectorAll("[data-count]").forEach(function(el){
+    var end = parseFloat(el.getAttribute("data-count")); var obj = {v:0};
+    ScrollTrigger.create({ trigger:el, start:"top 88%", once:true, onEnter:function(){
+      gsap.to(obj, { v:end, duration:1.4, ease:"power2.out", onUpdate:function(){ el.textContent = Math.round(obj.v); } });
+    }});
+  });
+  /* Magnetic button pull removed: translating a button toward the cursor
+     slid it sideways over the button next to it in the CTA rows (the
+     overlap in the report). Buttons now stay in place; their only hover
+     motion is the 2px upward lift defined in CSS, which cannot overlap
+     a neighbour. */
+})();
+</script>
+</body>
+</html>
